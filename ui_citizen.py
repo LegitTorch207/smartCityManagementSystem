@@ -12,6 +12,7 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QIcon
 
 import models
 
@@ -77,7 +78,8 @@ class CitizenDashboard(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
 
-        btn_refresh = QPushButton("🔄 Refresh")
+        btn_refresh = QPushButton("Refresh Complaints")
+        btn_refresh.setIcon(QIcon("icons/refresh.png")) 
         btn_refresh.setFixedWidth(120)
         btn_refresh.clicked.connect(self._load_complaints)
         layout.addWidget(btn_refresh)
@@ -154,7 +156,8 @@ class CitizenDashboard(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
 
-        btn_refresh = QPushButton("🔄 Refresh Bills")
+        btn_refresh = QPushButton("Refresh Bills")
+        btn_refresh.setIcon(QIcon("icons/refresh.png"))
         btn_refresh.setFixedWidth(140)
         btn_refresh.clicked.connect(self._load_bills)
         layout.addWidget(btn_refresh)

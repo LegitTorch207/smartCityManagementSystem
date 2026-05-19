@@ -12,6 +12,7 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QIcon
 
 import models
 
@@ -82,7 +83,8 @@ class AdminDashboard(QMainWindow):
         layout = QVBoxLayout(widget)
 
         # Refresh button
-        btn_refresh = QPushButton("🔄 Refresh Complaints")
+        btn_refresh = QPushButton("Refresh Complaints")
+        btn_refresh.setIcon(QIcon("icons/refresh.png")) 
         btn_refresh.setFixedWidth(180)
         btn_refresh.clicked.connect(self._load_complaints)
         layout.addWidget(btn_refresh)
@@ -171,7 +173,8 @@ class AdminDashboard(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
 
-        btn_refresh = QPushButton("🔄 Refresh Employees")
+        btn_refresh = QPushButton("Refresh Employees")
+        btn_refresh.setIcon(QIcon("icons/refresh.png")) 
         btn_refresh.setFixedWidth(180)
         btn_refresh.clicked.connect(self._load_employees)
         layout.addWidget(btn_refresh)
@@ -243,7 +246,8 @@ class AdminDashboard(QMainWindow):
         widget = QWidget()
         layout = QVBoxLayout(widget)
 
-        btn_refresh = QPushButton("🔄 Refresh Bills")
+        btn_refresh = QPushButton("Refresh Utility Bills")
+        btn_refresh.setIcon(QIcon("icons/refresh.png")) 
         btn_refresh.setFixedWidth(150)
         btn_refresh.clicked.connect(self._load_utilities)
         layout.addWidget(btn_refresh)

@@ -12,6 +12,7 @@ from PyQt6.QtWidgets import (
 )
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QIcon
 
 import models
 
@@ -78,7 +79,8 @@ class WorkerDashboard(QMainWindow):
         layout.addWidget(info)
 
         # Refresh button
-        btn_refresh = QPushButton("🔄 Refresh My Tasks")
+        btn_refresh = QPushButton("Refresh My Tasks")
+        btn_refresh.setIcon(QIcon("icons/refresh.png"))
         btn_refresh.setFixedWidth(170)
         btn_refresh.clicked.connect(self._load_tasks)
         layout.addWidget(btn_refresh)
