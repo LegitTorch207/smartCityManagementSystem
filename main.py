@@ -1,12 +1,3 @@
-# main.py
-# ============================================================
-# Smart City Management System - Application Entry Point
-# Run this file to start the application:
-#   python main.py
-# ============================================================
-
-import sys
-from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QFont
 
 from ui_login import LoginWindow
@@ -14,11 +5,8 @@ from ui_login import LoginWindow
 
 def main():
     app = QApplication(sys.argv)
-
-    # Set application-wide font for cleaner look
     app.setFont(QFont("Segoe UI", 10))
 
-    # Optional: Apply a light stylesheet for consistent look
     app.setStyleSheet("""
         QWidget {
         color: #1E293B;

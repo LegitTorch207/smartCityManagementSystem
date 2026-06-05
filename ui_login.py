@@ -1,8 +1,5 @@
-# ui_login.py
-# ============================================================
 # Smart City Management System - Login Window
 # Handles both Citizen and Employee login + Citizen Registration
-# ============================================================
 
 from PyQt6.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
@@ -49,9 +46,8 @@ class LoginWindow(QWidget):
         tabs.addTab(self._build_register_tab(), "Register (Citizen)")
         main_layout.addWidget(tabs)
 
-    # ----------------------------------------------------------
     # LOGIN TAB
-    # ----------------------------------------------------------
+
     def _build_login_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -145,9 +141,9 @@ class LoginWindow(QWidget):
         self.dashboard.show()
         self.close()
 
-    # ----------------------------------------------------------
+
     # REGISTER TAB
-    # ----------------------------------------------------------
+    
     def _build_register_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)

@@ -1,19 +1,5 @@
-# db.py
-# ============================================================
-# Smart City Management System - Database Connection Layer
-# Handles all raw SQL queries via pyodbc
-# ============================================================
-
 import pyodbc
 
-# ============================================================
-# DATABASE CONFIGURATION
-# Update SERVER to your MS SQL Server instance name.
-# Common values:
-#   'localhost'               -> default local instance
-#   'localhost\\SQLEXPRESS'   -> SQL Server Express
-#   '.\\SQLEXPRESS'           -> shorthand for Express
-# ============================================================
 SERVER   = 'localhost\\SQLEXPRESS'   # <-- Change this if needed
 DATABASE = 'SmartCityDB'
 
@@ -30,10 +16,7 @@ def get_connection():
     )
     return pyodbc.connect(conn_str)
 
-
-# ============================================================
 # AUTHENTICATION QUERIES
-# ============================================================
 
 def login_citizen(email, password):
     """Return citizen row if credentials match, else None."""
@@ -60,10 +43,7 @@ def login_employee(email, password):
     conn.close()
     return row
 
-
-# ============================================================
 # CITIZEN QUERIES
-# ============================================================
 
 def register_citizen(name, email, password):
     """Insert a new citizen. Returns True on success, False if email exists."""
@@ -142,10 +122,7 @@ def pay_utility_bill(citizen_id, utility_id, amount):
     conn.commit()
     conn.close()
 
-
-# ============================================================
 # ADMIN QUERIES
-# ============================================================
 
 def get_all_complaints():
     """Return all complaints with citizen name and department."""
@@ -287,10 +264,7 @@ def get_all_utilities():
     conn.close()
     return rows
 
-
-# ============================================================
 # WORKER QUERIES
-# ============================================================
 
 def get_worker_tasks(employee_id):
     """Return all tasks assigned to a specific worker."""

@@ -1,8 +1,5 @@
-# ui_admin.py
-# ============================================================
 # Smart City Management System - Admin / Officer Dashboard
 # Features: Complaints, Employee Management, Utility Billing
-# ============================================================
 
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
@@ -16,10 +13,8 @@ from PyQt6.QtGui import QIcon
 
 import models
 
-
-# ============================================================
 # HELPER: Populate a QTableWidget from list-of-dicts
-# ============================================================
+
 def populate_table(table: QTableWidget, headers: list, rows: list, keys: list):
     """Generic table fill from list of dicts."""
     table.setColumnCount(len(headers))
@@ -75,9 +70,9 @@ class AdminDashboard(QMainWindow):
         tabs.addTab(self._build_utilities_tab(), "💡 Utility Bills")
         layout.addWidget(tabs)
 
-    # ----------------------------------------------------------
+
     # COMPLAINTS TAB
-    # ----------------------------------------------------------
+
     def _build_complaints_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -166,9 +161,9 @@ class AdminDashboard(QMainWindow):
         QMessageBox.information(self, "Result", msg)
         self._load_complaints()
 
-    # ----------------------------------------------------------
+
     # EMPLOYEES TAB
-    # ----------------------------------------------------------
+
     def _build_employees_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -239,9 +234,9 @@ class AdminDashboard(QMainWindow):
         else:
             QMessageBox.warning(self, "Error", msg)
 
-    # ----------------------------------------------------------
+
     # UTILITY BILLS TAB
-    # ----------------------------------------------------------
+
     def _build_utilities_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -315,9 +310,9 @@ class AdminDashboard(QMainWindow):
         else:
             QMessageBox.warning(self, "Error", msg)
 
-    # ----------------------------------------------------------
+
     # LOGOUT
-    # ----------------------------------------------------------
+
     def _logout(self):
         from ui_login import LoginWindow
         self.login = LoginWindow()

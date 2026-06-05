@@ -1,8 +1,5 @@
-# ui_worker.py
-# ============================================================
 # Smart City Management System - Field Worker Dashboard
 # Features: View assigned tasks, Update task status
-# ============================================================
 
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
@@ -113,9 +110,8 @@ class WorkerDashboard(QMainWindow):
 
         layout.addWidget(update_box)
 
-    # ----------------------------------------------------------
     # Load Tasks
-    # ----------------------------------------------------------
+
     def _load_tasks(self):
         data    = models.get_worker_tasks(self.user['id'])
         headers = ["Task ID", "Complaint Description", "Complaint Status", "My Task Status", "Assigned At"]
@@ -134,9 +130,8 @@ class WorkerDashboard(QMainWindow):
                 else:  # Pending
                     status_item.setForeground(Qt.GlobalColor.darkRed)
 
-    # ----------------------------------------------------------
     # Update Task Status
-    # ----------------------------------------------------------
+
     def _update_status(self):
         task_id_text = self.task_id_input.text().strip()
         if not task_id_text:
@@ -168,9 +163,8 @@ class WorkerDashboard(QMainWindow):
         self.task_id_input.clear()
         self._load_tasks()
 
-    # ----------------------------------------------------------
     # Logout
-    # ----------------------------------------------------------
+
     def _logout(self):
         from ui_login import LoginWindow
         self.login = LoginWindow()

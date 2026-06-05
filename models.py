@@ -1,16 +1,10 @@
-# models.py
-# ============================================================
 # Smart City Management System - Business Logic / Models
 # Acts as a bridge between UI and database layer (db.py)
 # Keeps validation and formatting logic separate from UI
-# ============================================================
 
 import db
 
-
-# ============================================================
 # AUTHENTICATION
-# ============================================================
 
 def authenticate(email, password, user_type):
     """
@@ -55,10 +49,7 @@ def register_citizen(name, email, password):
         return True, "Registration successful!"
     return False, "Email already registered. Please login."
 
-
-# ============================================================
 # COMPLAINT MANAGEMENT
-# ============================================================
 
 def get_citizen_complaints(citizen_id):
     """Return complaint list as list of dicts for easy UI binding."""
@@ -122,10 +113,7 @@ def get_workers():
     rows = db.get_workers()
     return [{'id': r[0], 'name': r[1], 'department': r[2]} for r in rows]
 
-
-# ============================================================
 # EMPLOYEE MANAGEMENT
-# ============================================================
 
 def get_all_employees():
     """Return employees as list of dicts."""
@@ -152,9 +140,7 @@ def add_employee(name, email, password, role, department_id):
     return False, "Email already exists."
 
 
-# ============================================================
 # UTILITY BILLING
-# ============================================================
 
 def get_citizen_utilities(citizen_id):
     """Return utilities for a citizen as list of dicts."""
@@ -218,10 +204,7 @@ def get_all_utilities():
         for r in rows
     ]
 
-
-# ============================================================
 # WORKER TASKS
-# ============================================================
 
 def get_worker_tasks(employee_id):
     """Return task list for a worker."""

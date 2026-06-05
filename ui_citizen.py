@@ -1,8 +1,5 @@
-# ui_citizen.py
-# ============================================================
 # Smart City Management System - Citizen Dashboard
 # Features: Submit Complaint, View Complaints, Utility Bills
-# ============================================================
 
 from PyQt6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout,
@@ -71,9 +68,9 @@ class CitizenDashboard(QMainWindow):
         tabs.addTab(self._build_bills_tab(),      "💡 My Utility Bills")
         layout.addWidget(tabs)
 
-    # ----------------------------------------------------------
+    
     # MY COMPLAINTS TAB
-    # ----------------------------------------------------------
+
     def _build_complaints_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -101,9 +98,8 @@ class CitizenDashboard(QMainWindow):
         keys    = ["id", "description", "status", "department", "created_at"]
         populate_table(self.complaints_table, headers, data, keys)
 
-    # ----------------------------------------------------------
     # SUBMIT COMPLAINT TAB
-    # ----------------------------------------------------------
+
     def _build_submit_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -149,9 +145,8 @@ class CitizenDashboard(QMainWindow):
             self.submit_status.setStyleSheet("color: red;")
             self.submit_status.setText("❌ " + msg)
 
-    # ----------------------------------------------------------
     # MY UTILITY BILLS TAB
-    # ----------------------------------------------------------
+
     def _build_bills_tab(self):
         widget = QWidget()
         layout = QVBoxLayout(widget)
@@ -218,9 +213,8 @@ class CitizenDashboard(QMainWindow):
         self.bill_id_input.clear()
         self._load_bills()
 
-    # ----------------------------------------------------------
     # LOGOUT
-    # ----------------------------------------------------------
+
     def _logout(self):
         from ui_login import LoginWindow
         self.login = LoginWindow()
